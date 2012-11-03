@@ -5,10 +5,10 @@ CFLAGS=-O -g
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-all: canalyze
+all: c_canalyze
 
 
-canalyze: canalyze.o fgetname.o 
+c_canalyze: c_analyze.o fgetname.o 
 	cc -o $@ $^
 
 fgetname: fgetname.o 
