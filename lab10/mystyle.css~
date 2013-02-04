@@ -1,0 +1,14 @@
+html, body{
+  background-color:tan;
+  
+}
+.name{
+  font-size:11pt;
+  margin-:15px;
+  
+}
+.form{
+  font-size:11pt;
+  margin-right:15px;
+  float
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="mystyle.css" />
+    <script>
+        function getName(event){
+	    if (event.keyCode >= 48 && event.keyCode <= 57)
+	    alert("enter char");
+	}
+	function getPass(){
+	    var count=0; 
+	    var c= document.forms.getElementById("pass");
+	    if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		 alert(c);
+		 count++;
+	   
+	}
+
+
+
+      function showHint(str){
+	varxmlhttp;
+	if (str.length==0){
+	  document.getElementById("txtHint").innerHTML="";
+	return;
+	}
+	if (window.XMLHttpRequest){// IE7+,Firefox,Chrome,Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	}
+	else{// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function(){
+	if (xmlhttp.readyState==4 &&xmlhttp.status==200){
+	  document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+	}
+      }
+      xmlhttp.open("GET","http://www.cs.bgu.ac.il/~abedas/remote_service.php?q="+str,true);
+      xmlhttp.send();
+      } 
+
+    </script>
+  </head>
+  <body>
+    <div class="forms">
+      <Form action="noy.html">
+	  Username : <input type="text" name="username" onkeyup="getName(event)" >
+	  Password : <input type="text" password="password" id="pass">
+	  <button type="submit" onclick="getPass()">Continue</button><br>
+	  <h4>suggestion</h4>
+	   
+      </From > 
+    </div>
+    <div class="name">
+	<h1>Noy Eliahu</h1>
+	<h2>something about myself</h2>
+	<img src="dog.jpg" alt="dog" width="304" height="228" align="right">
+	
+    </div>
+    
+
+
+
+
+  </body>
+</html>
+
+
+
