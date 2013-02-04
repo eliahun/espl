@@ -10,35 +10,19 @@
 	-q  do not print out the differences, exits with code 0
 	if the files are identical, 1 otherwise */
 
- // struct globalArgs_t {
- //     int *options;                /* -h option */
- //     int *number;               /* -n option */
- //     int *quit;               /* -q option */
-      
-	      
-// } globalArgs;
- // static const char *optString = "h:n:q";
+
  
 
-  int main(int argc, char **argv) {
+  int old_main(int argc, char **argv) {
     
-    int opt = 0;
-    int num=0;
-    static const char *optString = "h:n:q";
+    int opt = 0;                                 //flag
+    int num=0;					//flag
+    static const char *optString = "h:n:q";     //flag
     
-     int options=0;                /* -h option */
-     int number=0;               /* -n option */
-     int quit=0;
-    
-    
-      /* Initialize globalArgs before we get to work. */
-    //globalArgs.options =0;     /* false */
-    //globalArgs.number = 0;
-    //globalArgs.quit = 0;
-    
-    
-    
-    
+     int options=0;                /* -h option */   //flag
+     int number=0;               /* -n option */      //flag
+     int quit=0;					//flag
+        
     FILE *first_file=fopen(argv[argc-2], "r"); 
     FILE *second_file=fopen(argv[argc-1], "r"); 
     size_t result;
@@ -121,10 +105,7 @@
       if (quit==1){
 	return 0;
       }
-      
-    
-      
-      
+ 
       
       fclose(first_file);
       fclose(second_file);
